@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontrola dostupnosti</title>
+    <script>
+        window.onload = function() {
+            // Nastavení počátečního stavu tlačítka
+            var button = document.getElementById('orderButton');
+            button.disabled = true;  // Tlačítko je po načtení stránky neaktivní
+            button.innerHTML = "Kontroluji dostupnost…";  // Text na tlačítku při načtení stránky
+
+            // Nastavení zpoždění 8 vteřin
+            setTimeout(function() {
+                button.disabled = false;  // Po 8 vteřinách tlačítko zpřístupníme
+                button.innerHTML = "Objednat";  // Změníme text na "Objednat"
+            }, 8000);  // 8 sekund = 8000 milisekund
+        };
+    </script>
+</head>
+<body>
+    <button id="orderButton" disabled>Kontroluji dostupnost…</button>
+</body>
+</html>
